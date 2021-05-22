@@ -12,7 +12,7 @@
         <div class="col-12 col-md-6">
             <div class="card">
                 <a href="https://theafricanboss.com/venmo" target="_blank">
-                    <img src="https://ps.w.org/wc-venmo/assets/icon-256x256.png?rev=2374303" class="card-img-top" alt="MOMO Venmo PRO">
+                    <img src="<?php echo (esc_url( MOMOVENMO_PLUGIN_DIR_URL . 'assets/images/venmo.png' ) ); ?>" class="card-img-top" alt="MOMO Venmo PRO">
                 </a>
                 <div class="card-body">
                     <h5 class="card-title">MOMO Venmo PRO</h5>

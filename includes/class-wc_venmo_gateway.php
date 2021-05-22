@@ -11,7 +11,7 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 		public function __construct() {
 
 			$this->id = 'venmo'; // payment gateway plugin ID
-			$this->icon = MOMOVENMO_PLUGIN_DIR_URL . 'assets/images/venmo.png'; // URL of the icon that will be displayed on checkout page near your gateway name
+			$this->icon = MOMOVENMO_PLUGIN_DIR_URL . 'assets/images/venmo_35.png'; // URL of the icon that will be displayed on checkout page near your gateway name
 			$this->has_fields = true; // in case you need a custom form
 			$this->method_title = 'Venmo';
 			$this->method_description = 'Easily receive Venmo payments'; // will be displayed on the options page		
