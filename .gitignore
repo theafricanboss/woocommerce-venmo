@@ -1,0 +1,8 @@
+svn-local/
+*.zip
+.DS_Store
+!assets/*
+!includes/*
+!languages/*
+!pro/*
+!cashapp.php
