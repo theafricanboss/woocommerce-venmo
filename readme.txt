@@ -1,4 +1,4 @@
-=== MOMO Venmo ===
+=== Checkout with Venmo ===
 Contributors: theafricanboss
 Donate Link: https://theafricanboss.com
 Tags: venmo, paypal, finance, payments, money, transfer, receive, send, money transfer, usa, mobile money, cash, momo, woocommerce
@@ -13,7 +13,7 @@ The top finance app in the App Store now available on WordPress. Receive Venmo p
 
 == Description ==
 
-**MOMO Venmo - Mobile Money Payments WooCommerce Extension**
+**Checkout with Venmo - Mobile Money Payments WooCommerce Extension**
 
 Venmo - Mobile Money Payments Woocommerce Extension
 
@@ -42,13 +42,13 @@ See the screenshots or the store example of [Gura Stores](https://gurastores.com
 = From Dashboard ( WordPress admin ) =
 
 - Go to Plugins -> Add New
-- Search for ‘MOMO Venmo’
+- Search for ‘Checkout with Venmo’
 - Click on Install Now
 - Activate the plugin through the “Plugins” menu in WordPress.
 
 = Using cPanel or FTP =
 
-- Download ‘MOMO Venmo’ from [The African Boss](https://theafricanboss.com/venmo)
+- Download ‘Checkout with Venmo’ from [The African Boss](https://theafricanboss.com/venmo)
 - Unzip wc-venmo.zip’ file and
 - Upload wc-venmo folder to the “/wp-content/plugins/” directory.
 - Activate the plugin through the “Plugins” menu in WordPress.
@@ -65,10 +65,11 @@ Also _you can visit_ the [plugin page](https://theafricanboss.com/venmo) for fur
 
 == Frequently Asked Questions ==
 
-= Does Venmo integrate Payment APIs? =
+= Does this Venmo plugin integrate with the payment APIs? =
 
-Venmo plugin is a quick and easy way to display to your customers your CashTag and to link them to it.
-Unfortunately, this plugin doesn't integrate a full Venmo end-to-end payment. It only displays your cashtag to the customer and redirects them to it so that the off site Venmo transaction can take place.
+This plugin is a quick and easy way to display to your customers your Venmo username and to link them to it.
+Unfortunately, this plugin doesn't integrate a full Venmo end-to-end payment. It only displays your Venmo username to the customer and redirects them to it so that the off site Venmo transaction can take place.
+
 Please check screenshots for more details on what is reported.
 
 == Screenshots ==
