@@ -6,7 +6,7 @@
     <img src="assets/images/venmo.png" alt="MOMO Plugin logo" height="100" width="auto">
   </a>
 
-  <h3 align="center">MOMO Venmo - Checkout on Woocommerce with Venmo</h3>
+  <h3 align="center">Checkout with Venmo - Checkout on Woocommerce with Venmo</h3>
 
   <p align="center">
     The top finance app in the App Store now available on WordPress. Receive Venmo payments on your website with WooCommerce + Venmo
@@ -60,13 +60,13 @@ See the screenshots or the store example of [Gura Stores](https://gurastores.com
 ### From Dashboard ( WordPress admin )
 
 - Go to Plugins -> Add New
-- Search for ‘MOMO Venmo’
+- Search for ‘Checkout with Venmo’
 - Click on Install Now
 - Activate the plugin through the “Plugins” menu in WordPress.
 
 ### Using cPanel or FTP
 
-- Download ‘MOMO Venmo’ from [The African Boss](https://theafricanboss.com/venmo)
+- Download ‘Checkout with Venmo’ from [The African Boss](https://theafricanboss.com/venmo)
 - Unzip wc-venmo.zip file and
 - Upload wc-venmo folder to the “/wp-content/plugins/” directory.
 - Activate the plugin through the “Plugins” menu in WordPress.
