@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 		
-if ( ! $sent_to_admin && 'venmo' === $order->get_payment_method() ) {
+if ( 'on-hold' === $order->get_status() && 'venmo' === $order->get_payment_method() ) {
 
 	echo '<p>Send <a style="color: #3396cd" href="https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=checkout at ', get_site_url(), '" target="_blank">the requested total to ', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '</a> or click the Venmo button below</p>';
 
