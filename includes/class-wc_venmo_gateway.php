@@ -153,6 +153,21 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 			// Customer Emails
 			add_action( 'woocommerce_email_before_order_table', array( $this, 'email_instructions' ), 10, 3 );
 				
+		
+			add_action( 'admin_enqueue_scripts', array( $this, 'momo_venmo_admin_css' ), 10, 3 );
+	}
+
+		/**
+		 * Register and enqueue a custom stylesheet in the WordPress admin.
+		 */
+		public function momo_venmo_admin_css() {
+			$currentScreen = get_current_screen();
+			if ($currentScreen->id == 'venmo_page_momo_venmo_recommended_menu_page' || $currentScreen->id == 'venmo_page_momo_venmo_tutorials_menu_page' ) {
+				wp_register_style( 'bootstrap', MOMOVENMO_PLUGIN_DIR_URL . 'assets/css/bootstrap.min.css');
+				wp_enqueue_style( 'bootstrap' );
+			} else {
+				return;
+			}
 		}
 		
 		//Checkout page

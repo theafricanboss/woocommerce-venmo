@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// if our payment gateway is disabled, we do not have to enqueue JS too
+// if our payment gateway is disabled, we do not have to enqueue JS/CSS too
 if ( 'no' === $this->enabled ) {
     return;
 }
