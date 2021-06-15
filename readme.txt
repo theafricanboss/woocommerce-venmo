@@ -4,7 +4,7 @@ Donate Link: https://theafricanboss.com
 Tags: venmo, paypal, finance, payments, money, transfer, receive, send, money transfer, usa, mobile money, cash, momo, woocommerce
 Requires at least: 4.0
 Tested up to: 5.7.2
-Stable tag: 1.0
+Stable tag: 1.1
 Requires PHP: 5.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -80,6 +80,13 @@ Please check screenshots for more details on what is reported.
 4. This is where the Venmo link bring the customer with a prefilled order id and URL
 
 == Changelog ==
+
+= 1.1 June 15, 2021 =
+
+- Added wp_die to deactivate plugin when the PRO version is active
+- Emails will be sent with the note from now on only if the order is still on-hold
+- Name change from 'MOMO Venmo' to 'Checkout with Venmo'
+- Updated links of assets in recommended and tutorials links
 
 = 1.0 May 15, 2021 =
 

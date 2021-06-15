@@ -7,8 +7,8 @@
  * Author URI: https://theafricanboss.com
  * Version: 1.0
  * WC requires at least: 3.0.0
- * WC tested up to: 5.3.0
- * Version Date: May 15, 2021
+ * WC tested up to: 5.4.1
+ * Version Date: June 15, 2021
  * Created: 2021
  * Copyright 2021 theafricanboss.com All rights reserved
  */
