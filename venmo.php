@@ -5,7 +5,7 @@
  * Description: The top finance app in the App Store now on WordPress. Receive Venmo payments on your website with WooCommerce + Venmo
  * Author: The African Boss
  * Author URI: https://theafricanboss.com
- * Version: 1.0
+ * Version: 1.1
  * WC requires at least: 3.0.0
  * WC tested up to: 5.4.1
  * Version Date: June 15, 2021
