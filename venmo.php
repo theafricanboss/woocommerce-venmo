@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: MOMO Venmo
+ * Plugin Name: Checkout with Venmo
  * Plugin URI: https://theafricanboss.com/venmo
  * Description: The top finance app in the App Store now on WordPress. Receive Venmo payments on your website with WooCommerce + Venmo
  * Author: The African Boss
@@ -37,7 +37,13 @@ if( ! is_plugin_active ( 'woocommerce/woocommerce.php' ) ){
 }
 
 if ( current_user_can( 'manage_options' ) ) {
-	require_once MOMOVENMO_PLUGIN_DIR . 'pro/index.php';
+	if ( is_plugin_active( 'wc-venmo-pro/venmo.php' ) ) {
+		deactivate_plugins( MOMOVENMO_PLUGIN_BASENAME );
+		wp_die( '<div><p>Checkout with Venmo has been deactivated because the PRO version is activated. 
+		<strong>Enjoy the upgrade</strong></p></div>
+		<div><a href="' . admin_url('plugins.php') . '">Return</a></div>' );
+	}
+	include_once MOMOVENMO_PLUGIN_DIR . 'pro/index.php';
 	require_once MOMOVENMO_PLUGIN_DIR . 'includes/admin/dashboard.php';
 }
 
