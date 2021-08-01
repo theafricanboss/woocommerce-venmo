@@ -20,8 +20,9 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 			$this->enabled = $this->get_option( 'enabled' );
 			$this->title = $this->get_option( 'checkout_title' );
 			$this->ReceiverVENMONo = $this->get_option( 'ReceiverVENMONo' );
-			$this->ReceiverVENMONoOwner = $this->get_option( 'ReceiverVENMONoOwner' );
 			$this->ReceiverVenmo = $this->get_option( 'ReceiverVenmo' );
+			$this->venmo_note = $this->get_option( 'venmo_note' );
+			$this->ReceiverVENMONoOwner = $this->get_option( 'ReceiverVENMONoOwner' );
 			$this->ReceiverVenmoOwner = $this->get_option( 'ReceiverVenmoOwner' );
 			$this->ReceiverVENMOEmail = $this->get_option( 'ReceiverVENMOEmail' );
 			$this->checkout_description = $this->get_option( 'checkout_description' );
@@ -32,10 +33,12 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 			$this->toggleSupport = $this->get_option( 'toggleSupport' );
 			$this->toggleTutorial = $this->get_option( 'toggleTutorial' );
 			$this->toggleCredits = $this->get_option( 'toggleCredits' );
+			
+			if ( isset( $this->ReceiverVenmo ) ) { $test = '<a href="https://venmo.com/'. esc_attr( wp_kses_post( $this->ReceiverVenmo ) ). '?txn=pay&amount=1&note=checkout at '. get_site_url(). '" target="_blank">Test</a>'; } else { $test = ''; }
 
 			$this->form_fields = array(
 				'enabled' => array(
-					'title'       => 'Enable VENMO',
+					'title'       => 'Enable VENMO ' . $test,
 					'label'       => 'Check to Enable / Uncheck to Disable',
 					'type'        => 'checkbox',
 					'default'     => 'no'
@@ -54,10 +57,19 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 					'placeholder' => "+1234567890",
 				),
 				'ReceiverVenmo' => array(
-					'title'       => 'Receiver Venmo account',
+					'title'       => 'Receiver Venmo username ' . $test,
 					'type'        => 'text',
-					'description' => 'This is the Venmo account associated with your store Venmo account. Customers will send money to this Venmo account',
+					'description' => 'This is the Venmo username associated with your store Venmo account. Customers will send money to this Venmo account',
 					'placeholder' => 'username',
+				),
+				'venmo_note'    => array(
+					'title'       => 'Venmo Transaction Note with Order Number prepopulated <a style="text-decoration:none" href="https://theafricanboss.com/venmo/" target="_blank"><sup style="color:red">PRO</sup></a>',
+					'type'        => 'text',
+					'description' => 'Transaction Note or Purchasing reason that will be transferred into the Venmo app for the order <a style="text-decoration:none" href="https://theafricanboss.com/venmo/" target="_blank">APPLY CHANGES WITH PRO</a>',
+					'default'     => 'checkout at '. get_site_url(),
+					'placeholder' => 'checkout at '. get_site_url(),
+					'css'     => 'width:80%; pointer-events: none;',
+					'class'     => 'disabled',
 				),
 				'ReceiverVenmoOwner' => array(
 					'title'       => "Receiver Venmo Owner's Name",
@@ -152,22 +164,7 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 			
 			// Customer Emails
 			add_action( 'woocommerce_email_before_order_table', array( $this, 'email_instructions' ), 10, 3 );
-				
-		
-			add_action( 'admin_enqueue_scripts', array( $this, 'momo_venmo_admin_css' ), 10, 3 );
-	}
-
-		/**
-		 * Register and enqueue a custom stylesheet in the WordPress admin.
-		 */
-		public function momo_venmo_admin_css() {
-			$currentScreen = get_current_screen();
-			if ($currentScreen->id == 'venmo_page_momo_venmo_recommended_menu_page' || $currentScreen->id == 'venmo_page_momo_venmo_tutorials_menu_page' ) {
-				wp_register_style( 'bootstrap', MOMOVENMO_PLUGIN_DIR_URL . 'assets/css/bootstrap.min.css');
-				wp_enqueue_style( 'bootstrap' );
-			} else {
-				return;
-			}
+	
 		}
 		
 		//Checkout page
@@ -187,7 +184,9 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 
 		//Add content to the WC emails
 		public function email_instructions( $order, $sent_to_admin, $plain_text = false ) {
-			require_once MOMOVENMO_PLUGIN_DIR . 'includes/notifications/email.php';
+			if ( 'on-hold' === $order->get_status() && 'venmo' === $order->get_payment_method() ) {
+				require_once MOMOVENMO_PLUGIN_DIR . 'includes/notifications/email.php';
+			}
 		}
 		
 		//Process Order

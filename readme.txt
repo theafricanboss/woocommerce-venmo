@@ -3,8 +3,8 @@ Contributors: theafricanboss
 Donate Link: https://theafricanboss.com
 Tags: venmo, paypal, finance, payments, money, transfer, receive, send, money transfer, usa, mobile money, cash, momo, woocommerce
 Requires at least: 4.0
-Tested up to: 5.7.2
-Stable tag: 1.1
+Tested up to: 5.8
+Stable tag: 1.2
 Requires PHP: 5.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -80,6 +80,21 @@ Please check screenshots for more details on what is reported.
 4. This is where the Venmo link bring the customer with a prefilled order id and URL
 
 == Changelog ==
+
+= 1.2 August 1, 2021 =
+
+- Added the Venmo note that defaults to 'checkout at your_site.com'
+- Updated Venmo note occurences in email, checkout page, and thank you page
+- Added test button to settings page to see what customers see when they click the button or run the QR code
+- Updated checkout icon
+- Added settings links to plugins page
+- Added setup plugin link to wp_die when upgrading from free to PRO plugin
+- Fixed menu buttons in PRO plugin
+- Send email with payment info if order is on-hold
+- Fixed bootstrap CSS enqueued on menu pages
+- Removed content from assets/css/checkout that was forcing 35px size on some themes
+- Added height, max-height, width, max-width to force 100px in size of QR code and buttons on checkout and thank you page
+- Added .paym_link class to assets/css/checkout to remove any underline from themes on the QR code or button
 
 = 1.1 June 15, 2021 =
 
