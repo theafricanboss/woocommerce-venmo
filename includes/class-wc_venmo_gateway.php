@@ -7,14 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 
 	class wc_venmo_gateway extends WC_Payment_Gateway {
-		
+
 		public function __construct() {
 
 			$this->id = 'venmo'; // payment gateway plugin ID
 			$this->icon = MOMOVENMO_PLUGIN_DIR_URL . 'assets/images/venmo_35.png'; // URL of the icon that will be displayed on checkout page near your gateway name
 			$this->has_fields = true; // in case you need a custom form
 			$this->method_title = 'Venmo';
-			$this->method_description = 'Easily receive Venmo payments'; // will be displayed on the options page		
+			$this->method_description = 'Easily receive Venmo payments'; // will be displayed on the options page
 
 			$this->init_settings();
 			$this->enabled = $this->get_option( 'enabled' );
@@ -33,7 +33,7 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 			$this->toggleSupport = $this->get_option( 'toggleSupport' );
 			$this->toggleTutorial = $this->get_option( 'toggleTutorial' );
 			$this->toggleCredits = $this->get_option( 'toggleCredits' );
-			
+
 			if ( isset( $this->ReceiverVenmo ) ) { $test = '<a href="https://venmo.com/'. esc_attr( wp_kses_post( $this->ReceiverVenmo ) ). '?txn=pay&amount=1&note=checkout at '. get_site_url(). '" target="_blank">Test</a>'; } else { $test = ''; }
 
 			$this->form_fields = array(
@@ -59,7 +59,7 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 				'ReceiverVenmo' => array(
 					'title'       => 'Receiver Venmo username ' . $test,
 					'type'        => 'text',
-					'description' => 'This is the Venmo username associated with your store Venmo account. Customers will send money to this Venmo account',
+					'description' => 'Remove @ at the beginning in venmo username. This is the Venmo username associated with your store Venmo account. Customers will send money to this Venmo account',
 					'placeholder' => 'username',
 				),
 				'venmo_note'    => array(
@@ -96,8 +96,8 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 					'title'       => 'Thank You Notice <a style="text-decoration:none" href="https://theafricanboss.com/venmo/" target="_blank"><sup style="color:red">PRO</sup></a>',
 					'type'        => 'textarea',
 					'description' => 'Notice that will be added to the thank you page before store instructions if any. <a style="text-decoration:none" href="https://theafricanboss.com/venmo/" target="_blank">APPLY CHANGES WITH PRO</a>',
-					'default'     => "<p>We are checking our systems to confirm that we received. If you haven't sent the money already, please make sure to do so now.</p>" . 
-					'<p>Once confirmed, we will proceed with the shipping and delivery options you chose.</p>' . 
+					'default'     => "<p>We are checking our systems to confirm that we received. If you haven't sent the money already, please make sure to do so now.</p>" .
+					'<p>Once confirmed, we will proceed with the shipping and delivery options you chose.</p>' .
 					'<p>Thank you for doing business with us! You will be updated regarding your order details soon.</p>',
 					'css'     => 'width:80%; pointer-events: none;',
 					'class'     => 'disabled',
@@ -149,10 +149,10 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 					'default'     => 'no',
 				),
 			);
-			
+
 			// Gateways can support subscriptions, refunds, saved payment methods
 			$this->supports = array('products');
-			
+
 			// This action hook saves the settings
 			add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
 
@@ -161,22 +161,22 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 
 			// Thank you page
 			add_action( 'woocommerce_before_thankyou', array( $this, 'thankyou_page' ) );
-			
+
 			// Customer Emails
 			add_action( 'woocommerce_email_before_order_table', array( $this, 'email_instructions' ), 10, 3 );
-	
+
 		}
-		
+
 		//Checkout page
 		public function payment_fields () {
 			require_once MOMOVENMO_PLUGIN_DIR . 'includes/pages/checkout.php';
 		}
-		
+
 		//Payment Custom JS and CSS
 		public function payment_scripts() {
 			require_once MOMOVENMO_PLUGIN_DIR . 'includes/functions/payment_scripts.php';
 		}
-		
+
 		//Thank you page
 		public function thankyou_page( $order_id ) {
 			require_once MOMOVENMO_PLUGIN_DIR . 'includes/pages/thankyou.php';
@@ -188,23 +188,23 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 				require_once MOMOVENMO_PLUGIN_DIR . 'includes/notifications/email.php';
 			}
 		}
-		
+
 		//Process Order
 		public function process_payment( $order_id ) {
 
 			if( ! is_wp_error($order) ) {
-			
+
 				require_once MOMOVENMO_PLUGIN_DIR . 'includes/notifications/note.php';
-				
+
 				// Mark as on-hold (we're awaiting the payment).
 				$order->update_status( apply_filters( 'woocommerce_venmo_process_payment_order_status', 'on-hold', $order ), __( 'Checking for payment', 'woocommerce' ) );
-				
+
 				// reduce inventory
 				$order->reduce_order_stock();
-				
+
 				// Empty cart
 				$woocommerce->cart->empty_cart();
-				
+
 				// Redirect to the thank you page
 				return array( 'result' => 'success', 'redirect' => $this->get_return_url( $order ) );
 
@@ -212,9 +212,9 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 				wc_add_notice(  'Connection error.', 'error' );
 				return;
 			}
-			
+
 		}
-		
+
 		//Webhook
 		public function webhook() {
 			require_once MOMOVENMO_PLUGIN_DIR . 'includes/functions/webhook.php';

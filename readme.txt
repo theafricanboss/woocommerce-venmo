@@ -81,6 +81,10 @@ Please check screenshots for more details on what is reported.
 
 == Changelog ==
 
+= 1.3 August 27, 2021 =
+
+- Remove @ at the beginning in venmo username
+
 = 1.2 August 1, 2021 =
 
 - Added the Venmo note that defaults to 'checkout at your_site.com'
