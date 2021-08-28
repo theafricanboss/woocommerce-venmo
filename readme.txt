@@ -4,7 +4,7 @@ Donate Link: https://theafricanboss.com
 Tags: venmo, paypal, finance, payments, money, transfer, receive, send, money transfer, usa, mobile money, cash, momo, woocommerce
 Requires at least: 4.0
 Tested up to: 5.8
-Stable tag: 1.2
+Stable tag: trunk
 Requires PHP: 5.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +19,7 @@ Venmo - Mobile Money Payments Woocommerce Extension
 
 For more details about this woocommerce extension, **please visit [The African Boss](https://theafricanboss.com/venmo)**
 
-See available screenshots or the store example of [Gura Stores](https://gurastores.com/) for visual details.
+See available screenshots or the store example of [Gura Stores](https://gurastores.com/test/) for visual details.
 
 = PRO or customized version =
 
@@ -31,11 +31,11 @@ Visit [The African Boss](https://theafricanboss.com/venmo) for more details
 
 An example of the plugin in use is the following store:
 
-[Gura Stores](https://gurastores.com/)
+[Gura Stores](https://gurastores.com/test/)
 
 This plugin displays a Venmo link
 
-See the screenshots or the store example of [Gura Stores](https://gurastores.com/) for visual details.
+See the screenshots or the store example of [Gura Stores](https://gurastores.com/test/) for visual details.
 
 == Installation ==
 

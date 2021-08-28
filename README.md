@@ -35,11 +35,11 @@ Visit [The African Boss](https://theafricanboss.com/venmo) for more details
 
 An example of the plugin in use is the following store:
 
-[Gura Stores](https://gurastores.com/)
+[Gura Stores](https://gurastores.com/test/)
 
 This plugin displays a Venmo link or a QR code
 
-See the screenshots or the store example of [Gura Stores](https://gurastores.com/) for visual details.
+See the screenshots or the store example of [Gura Stores](https://gurastores.com/test/) for visual details.
 
 ## Screenshots
 
