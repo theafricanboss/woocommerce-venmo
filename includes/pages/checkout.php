@@ -20,7 +20,7 @@ echo '<p>Send <a style="color: #3396cd" href="https://venmo.com/', esc_attr( wp_
 echo '<p>Please <strong style="font-size:large;">use your Order Number (available once you place order)</strong> as the payment reference.</p>';
 // echo '<br>';
 
-echo '<p>Click > ';
+echo '<p class="momo-venmo">Click > ';
 
 echo '<a class="paym_link" href="https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=checkout at ', get_site_url(), '" target="_blank"><img style="float: none!important; height:100px!important; width:100px!important; max-height:100px!important; max-width:100px!important;" alt="Venmo link" src="' , esc_url( MOMOVENMO_PLUGIN_DIR_URL . 'assets/images/venmo.png' ) , '"></a>';
 
@@ -29,7 +29,7 @@ echo ' or Scan > <a class="paym_link" href="https://venmo.com/', esc_attr( wp_ks
 
 echo '<p><strong>After paying, please come back here and place the order</strong> below so we can receive shipping and delivery options.</p>';
 // echo '<br>';
-	
+
 // if venmo number is provided, we show it
 if ( '' === $this->ReceiverVENMONo ) {
 	$call = '';

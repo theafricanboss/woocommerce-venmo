@@ -179,7 +179,9 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 
 		//Thank you page
 		public function thankyou_page( $order_id ) {
-			require_once MOMOVENMO_PLUGIN_DIR . 'includes/pages/thankyou.php';
+			if ( 'venmo' === $order->get_payment_method() ) {
+				require_once MOMOVENMO_PLUGIN_DIR . 'includes/pages/thankyou.php';
+			}
 		}
 
 		//Add content to the WC emails
@@ -194,10 +196,12 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 
 			if( ! is_wp_error($order) ) {
 
-				require_once MOMOVENMO_PLUGIN_DIR . 'includes/notifications/note.php';
-
 				// Mark as on-hold (we're awaiting the payment).
 				$order->update_status( apply_filters( 'woocommerce_venmo_process_payment_order_status', 'on-hold', $order ), __( 'Checking for payment', 'woocommerce' ) );
+
+				if ( 'venmo' === $order->get_payment_method() ) {
+					require_once MOMOVENMO_PLUGIN_DIR . 'includes/notifications/note.php';
+				}
 
 				// reduce inventory
 				$order->reduce_order_stock();

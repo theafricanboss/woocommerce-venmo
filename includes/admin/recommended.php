@@ -42,7 +42,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Get Cash PRO | For donations, tips, funds from Cash App, Venmo, PayPal</h5>
                     <p class="card-text">This plugin adds QR codes anywhere to your site to accept donations, tips, funds, support, etc</p>
-                    <a href="https://theafricanboss.com/get-cash" class="btn btn-success" target="_blank">Buy for $9</a>
+                    <a href="https://theafricanboss.com/get-cash" class="btn btn-success" target="_blank">Buy for $19</a>
                 </div>
             </div>
         </div>

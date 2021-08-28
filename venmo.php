@@ -5,7 +5,7 @@
  * Description: The top finance app in the App Store now on WordPress. Receive Venmo payments on your website with WooCommerce + Venmo
  * Author: The African Boss
  * Author URI: https://theafricanboss.com
- * Version: 1.3
+ * Version: 2.0
  * WC requires at least: 3.0.0
  * WC tested up to: 5.6
  * Version Date: August 27, 2021
@@ -51,6 +51,7 @@ if ( current_user_can( 'manage_options' ) ) {
 
 	if ( is_plugin_active( 'wc-venmo-pro/venmo.php' ) ) {
 		deactivate_plugins( MOMOVENMO_PLUGIN_BASENAME );
+		activate_plugin( 'wc-venmo-pro/venmo.php');
 		wp_die( '<div><p>Checkout with Venmo has been deactivated because the PRO version is activated.
 		<strong>Enjoy the upgrade</strong></p></div>
 		<div><a href="' .  esc_url( admin_url( 'admin.php?page=wc-settings&tab=checkout&section=venmo', __FILE__ ) ) . '">Set up the plugin</a> | <a href="' . admin_url('plugins.php') . '">Return</a></div>' );

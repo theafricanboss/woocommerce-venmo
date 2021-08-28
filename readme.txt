@@ -81,9 +81,25 @@ Please check screenshots for more details on what is reported.
 
 == Changelog ==
 
-= 1.3 August 27, 2021 =
+= 2.0 August 27, 2021 =
 
 - Remove @ at the beginning in venmo username
+- Sharing payment methods with free versions to keep data across
+- Fixed 'if functions for on-hold and check payment methods' placement
+- Improved deactivate free plugins when PRO activated
+Smooth upgrade from free to PRO
+- PRO invitation admin notice when using free plugin
+- Fixed bootstrap CSS enqueued on menu pages
+- Added .momo-*** class to checkout CSS to apply custom CSS to payment icons and QR codes
+Removed content from assets/css/checkout that was forcing 35px size on some themes
+Added important height to force 100px in size of QR code and buttons on checkout and thank you page
+Added setup plugin link to wp_die when upgrading from free to PRO plugin
+- Better settings links on plugins page
+- Removed review notice asking for reviews
+- Better installation instructions
+- renamed PRO versions to [payment_name PRO]
+- Added free and paid recommended menus in sidebar with colors
+- Fixed menu buttons in PRO plugin
 
 = 1.2 August 1, 2021 =
 
