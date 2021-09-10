@@ -81,6 +81,9 @@ Please check screenshots for more details on what is reported.
 
 == Changelog ==
 
+= 2.1.1 September 9, 2021 =
+- Updated width and height attributes for momo-img
+
 = 2.1 September 7, 2021 =
 - Added .momo-img class that overwrites theme CSS for the button and QR code
 - Changed the wording and removed "shipping and delivery" to include digital woocommerce sellers
