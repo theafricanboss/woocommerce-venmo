@@ -22,9 +22,9 @@ echo '<p>Please <strong style="font-size:large;">use your Order Number (availabl
 
 echo '<p class="momo-venmo">Click > ';
 
-echo '<a class="paym_link" href="https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=checkout at ', get_site_url(), '" target="_blank"><img class="momo-img" alt="Venmo link" src="' , esc_url( MOMOVENMO_PLUGIN_DIR_URL . 'assets/images/venmo.png' ) , '"></a>';
+echo '<a class="paym_link" href="https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=checkout at ', get_site_url(), '" target="_blank"><img width="150" height="150" class="momo-img" alt="Venmo link" src="' , esc_url( MOMOVENMO_PLUGIN_DIR_URL . 'assets/images/venmo.png' ) , '"></a>';
 
-echo ' or Scan > <a class="paym_link" href="https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=checkout at ', get_site_url(), '" target="_blank"><img class="momo-img" alt="Venmo link" src="https://chart.googleapis.com/chart?cht=qr&chld=L|0&chs=100x100&chl=https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=checkout at ', get_site_url(), '"></a></p>';
+echo ' or Scan > <a class="paym_link" href="https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=checkout at ', get_site_url(), '" target="_blank"><img width="150" height="150" class="momo-img" alt="Venmo link" src="https://chart.googleapis.com/chart?cht=qr&chld=L|0&chs=100x100&chl=https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=checkout at ', get_site_url(), '"></a></p>';
 // echo '<br>';
 
 echo '<p><strong>After paying, please come back here and place the order</strong> below so we can start processing your order.</p>';
