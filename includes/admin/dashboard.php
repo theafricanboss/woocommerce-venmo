@@ -11,7 +11,7 @@ function venmo_admin_menu(){
 	$parent_slug = 'wc-settings&tab=checkout&section=venmo';
 	$capability = 'manage_options';
 
-	add_menu_page( null, 'VENMO', $capability , $parent_slug, 'venmo_admin_menu', 'dashicons-money-alt' );
+	add_menu_page( null, 'VENMO', $capability , $parent_slug, 'venmo_admin_menu', 'dashicons-money-alt', 56 );
 	add_submenu_page( $parent_slug , 'Upgrade VENMO' , '<span style="color:#99FFAA">Go Pro >> </span>' , $capability  , 'https://theafricanboss.com/venmo' , null, null );
 	add_submenu_page( $parent_slug , 'Feature my store' , 'Get Featured' , $capability  , 'https://theafricanboss.com/featured' , null, null );
 	add_submenu_page( $parent_slug , 'Review VENMO' , 'Review' , $capability  , 'https://wordpress.org/support/plugin/wc-venmo/reviews/?filter=5' , null, null );

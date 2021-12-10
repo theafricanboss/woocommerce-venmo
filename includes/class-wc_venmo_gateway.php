@@ -160,10 +160,10 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'payment_scripts' ) );
 
 			// Thank you page
-			add_action( 'woocommerce_before_thankyou', array( $this, 'thankyou_page' ) );
+			add_action( 'woocommerce_thankyou_venmo', array( $this, 'thankyou_page' ) );
 
 			// Customer Emails
-			add_action( 'woocommerce_email_before_order_table', array( $this, 'email_instructions' ), 10, 3 );
+			add_action( 'woocommerce_email_order_details', array( $this, 'email_instructions' ), 10, 3 );
 
 		}
 
@@ -188,7 +188,7 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 
 		//Add content to the WC emails
 		public function email_instructions( $order, $sent_to_admin, $plain_text = false ) {
-			if ( 'on-hold' === $order->get_status() && 'venmo' === $order->get_payment_method() ) {
+			if ( ! $sent_to_admin && 'on-hold' === $order->get_status() && 'venmo' === $order->get_payment_method() ) {
 				require_once MOMOVENMO_PLUGIN_DIR . 'includes/notifications/email.php';
 			}
 		}

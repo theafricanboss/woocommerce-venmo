@@ -5,9 +5,9 @@
  * Description: The top finance app in the App Store now on WordPress. Receive Venmo payments on your website with WooCommerce + Venmo
  * Author: The African Boss
  * Author URI: https://theafricanboss.com
- * Version: 2.1.1
- * WC requires at least: 3.0.0
- * WC tested up to: 5.6.0
+ * Version: 2.2
+ * WC requires at least: 4.0.0
+ * WC tested up to: 5.9.0
  * Created: 2021
  * Copyright 2021 theafricanboss.com All rights reserved
  */
@@ -28,7 +28,7 @@ require_once( ABSPATH . 'wp-includes/pluggable.php');
 define('MOMOVENMO_PLUGIN_DIR', plugin_dir_path(__FILE__) );
 define('MOMOVENMO_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 define('MOMOVENMO_PLUGIN_DIR_URL', plugins_url( '/' , __FILE__ ));
-define('MOMOVENMO_PRO_PLUGIN_DIR', plugin_dir_path( 'wc-venmo-pro' ) );
+define('MOMOVENMOPRO_PLUGIN_DIR', plugin_dir_path( 'wc-venmo-pro' ) );
 
 if( ! is_plugin_active ( 'woocommerce/woocommerce.php' ) ){
 	deactivate_plugins( MOMOVENMO_PLUGIN_BASENAME );
@@ -53,7 +53,7 @@ if ( current_user_can( 'manage_options' ) ) {
 		activate_plugin( 'wc-venmo-pro/venmo.php');
 		wp_die( '<div><p>Checkout with Venmo has been deactivated because the PRO version is activated.
 		<strong>Enjoy the upgrade</strong></p></div>
-		<div><a href="' .  esc_url( admin_url( 'admin.php?page=wc-settings&tab=checkout&section=venmo', __FILE__ ) ) . '">Set up the plugin</a> | <a href="' . admin_url('plugins.php') . '">Return</a></div>' );
+		<div><a href="' . admin_url('admin.php?page=wc-settings&tab=checkout&section=venmo') . '">Set up the plugin</a> | <a href="' . admin_url('plugins.php') . '">Return</a></div>' );
 	}
 	include_once MOMOVENMO_PLUGIN_DIR . 'pro/index.php';
 	require_once MOMOVENMO_PLUGIN_DIR . 'includes/admin/dashboard.php';
