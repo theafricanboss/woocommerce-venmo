@@ -1,9 +1,9 @@
-=== Checkout with Venmo ===
+=== Checkout with Venmo on Woocommerce ===
 Contributors: theafricanboss
 Donate Link: https://theafricanboss.com
 Tags: venmo, paypal, finance, payments, money, transfer, receive, send, money transfer, usa, mobile money, cash, momo, woocommerce
 Requires at least: 4.0
-Tested up to: 5.8.2
+Tested up to: 5.9.2
 Stable tag: trunk
 Requires PHP: 5.0
 License: GPLv3
@@ -13,9 +13,9 @@ The top finance app in the App Store now available on WordPress. Receive Venmo p
 
 == Description ==
 
-**Checkout with Venmo - Mobile Money Payments WooCommerce Extension**
+**Now compatible with Translation plugins (like Loco, WPML, etc) meaning you can translate the Checkout, Thank you page and Email notices**
 
-Venmo - Mobile Money Payments Woocommerce Extension
+> If using the PRO version, deactivate this plugin first.
 
 For more details about this woocommerce extension, **please visit [The African Boss](https://theafricanboss.com/venmo)**
 
@@ -42,13 +42,13 @@ See the screenshots or the store example of [Gura Stores](https://gurastores.com
 = From Dashboard ( WordPress admin ) =
 
 - Go to Plugins -> Add New
-- Search for ‘Checkout with Venmo’
+- Search for ‘Checkout with Venmo on Woocommerce’
 - Click on Install Now
 - Activate the plugin through the “Plugins” menu in WordPress.
 
 = Using cPanel or FTP =
 
-- Download ‘Checkout with Venmo’ from [The African Boss](https://theafricanboss.com/venmo)
+- Download ‘Checkout with Venmo on Woocommerce’ from [The African Boss](https://theafricanboss.com/venmo)
 - Unzip wc-venmo.zip’ file and
 - Upload wc-venmo folder to the “/wp-content/plugins/” directory.
 - Activate the plugin through the “Plugins” menu in WordPress.
@@ -80,6 +80,13 @@ Please check screenshots for more details on what is reported.
 4. This is where the Venmo link bring the customer with a prefilled order id and URL
 
 == Changelog ==
+
+= 3.0 Mar 15, 2021 =
+- SMS for Woocommerce compatible
+- Internalization of the plugin checkout, thankyou and email
+- Better Venmo URL encoding
+- Updated help links
+- Updated Woocommerce and Wordpress compatibility
 
 = 2.2 December 5, 2021 =
 - Updated from woocommerce_before_thankyou to woocommerce_thankyou_payment-method-id for compatibility with thank you page customizer plugins
@@ -140,7 +147,7 @@ Added setup plugin link to wp_die when upgrading from free to PRO plugin
 
 - Added wp_die to deactivate plugin when the PRO version is active
 - Emails will be sent with the note from now on only if the order is still on-hold
-- Name change from 'MOMO Venmo' to 'Checkout with Venmo'
+- Name change from 'MOMO Venmo' to 'Checkout with Venmo on Woocommerce'
 - Updated links of assets in recommended and tutorials links
 
 = 1.0 May 15, 2021 =

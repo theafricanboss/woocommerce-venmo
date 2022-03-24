@@ -1,27 +1,20 @@
-<?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+<?php if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 global $order;
 $order = wc_get_order( $order_id );
 $amount = $order->get_total();
 
 
-echo '<h2>Venmo Notice</h2>';
+echo '<h2>' . esc_html__( 'Venmo Notice', 'wcvenmo' ) . '</h2>';
 
-echo '<p>Pay by clicking the venmo button or scanning the QR code below.</p>';
-// echo '<br>';
+$venmo_note = sprintf( esc_html__( 'Order %1s checkout at %2s', 'wcvenmo' ), $order_id, get_site_url() );
 
-echo '<p class="momo-venmo">Click > ';
+echo '<p class="momo-venmo">' . esc_html__( 'Click', 'wcvenmo' ) . ' > ';
+echo '<a class="paym_link" href="https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=', urlencode($venmo_note), '" target="_blank"><img width="100" height="100" class="momo-img" alt="Venmo link" src="' , esc_url( MOMOVENMO_PLUGIN_DIR_URL . 'assets/images/venmo.png' ) , '"></a>';
+echo ' ' . esc_html__('or Scan', 'wcvenmo' ) . ' > <a class="paym_link" href="https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=', urlencode($venmo_note), '" target="_blank"><img width="100" height="100" class="momo-img" alt="Venmo link"
+src="https://chart.googleapis.com/chart?cht=qr&chld=L|0&chs=150x150&chl=https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ) . urlencode(esc_attr(wp_kses_post("?txn=pay&amount=" . $amount . "&note=" . $venmo_note ))) . '"></a></p>';
 
-echo '<a class="paym_link" href="https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=Order ' , $order_id , ' checkout at ', get_site_url(), '" target="_blank"><img width="150" height="150" class="momo-img" alt="Venmo link" src="' , esc_url( MOMOVENMO_PLUGIN_DIR_URL . 'assets/images/venmo.png' ) , '"></a>';
-
-echo ' or Scan > <a class="paym_link" href="https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=Order ' , $order_id , ' checkout at ', get_site_url(), '" target="_blank"><img width="150" height="150" class="momo-img" alt="Venmo link" src="https://chart.googleapis.com/chart?cht=qr&chld=L|0&chs=150x150&chl=https://venmo.com/', esc_attr( wp_kses_post( $this->ReceiverVenmo ) ), '?txn=pay&amount=' , esc_attr( wp_kses_post( $amount  ) ), '&note=Order ' , $order_id , ' checkout at ', get_site_url(), '"></a></p>';
-// echo '<br>';
-
-echo '<p><strong>Disclaimer: </strong>Your order will not be processed until funds have cleared in our Venmo account.</p>';
+echo '<p><strong>' . esc_html__( 'Disclaimer', 'wcvenmo' ) . ': </strong>' . esc_html__( 'Your order will not be processed until funds have cleared in our Venmo account', 'wcvenmo' ) . '.</p>';
 
 echo '<br><hr><br>';
 

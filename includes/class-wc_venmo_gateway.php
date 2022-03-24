@@ -18,7 +18,7 @@ if ( class_exists ( 'WC_Payment_Gateway' ) ) {
 
 			$this->init_settings();
 			$this->enabled = $this->get_option( 'enabled' );
-			$this->title = $this->get_option( 'checkout_title' );
+			$this->title = $this->get_option( 'checkout_title' ) ? $this->get_option( 'checkout_title' ) : $this->method_title;
 			$this->ReceiverVENMONo = $this->get_option( 'ReceiverVENMONo' );
 			$this->ReceiverVenmo = $this->get_option( 'ReceiverVenmo' );
 			$this->venmo_note = $this->get_option( 'venmo_note' );
