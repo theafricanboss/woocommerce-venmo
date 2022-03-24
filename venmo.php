@@ -8,7 +8,7 @@ Author URI: https://theafricanboss.com
 Version: 3.0
 WC requires at least: 4.0.0
 WC tested up to: 6.3.1
-Text Domain: wc-venmo
+Text Domain: momo-venmo
 Domain Path: languages
 Created: 2021
 Copyright 2021 theafricanboss.com All rights reserved
@@ -53,7 +53,7 @@ if( ! (class_exists( 'WCSMS_WooCommerce_Notification', false ) || is_plugin_acti
 
 // translations
 function momo_venmo_load_textdomain() {
-	load_plugin_textdomain( 'wc-venmo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	load_plugin_textdomain( 'momo-venmo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 add_action( 'plugins_loaded', 'momo_venmo_load_textdomain' );
 
